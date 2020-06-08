@@ -1,15 +1,11 @@
 import React from "react";
 import { Flex, Text } from "@chakra-ui/core";
 import styled from "styled-components";
-import { customTheme } from "../theme";
 import { Link as GatsbyLink } from "gatsby";
 import { globalHistory } from "@reach/router";
 
 const Nav = styled(Text)<{ route: string }>`
-  color: ${({ route }) =>
-    globalHistory.location.hash == `#${route}`
-      ? customTheme.colors.selectedNavColor
-      : "white"};
+  color: "white";
 `;
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({

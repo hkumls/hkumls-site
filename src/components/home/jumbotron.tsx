@@ -1,8 +1,7 @@
 import React from "react";
-import { Flex, Box, Text, Button } from "@chakra-ui/core";
+import { Flex, Box, Text, Button, useTheme } from "@chakra-ui/core";
 import RobotSVG from "../../assets/robot.svg";
 import styled from "styled-components";
-import { customTheme } from "../../theme";
 
 const StyledRobot = styled(RobotSVG)`
   height: 90%;
@@ -10,6 +9,7 @@ const StyledRobot = styled(RobotSVG)`
 `;
 
 export const Jumbotron = () => {
+  const customTheme = useTheme();
   return (
     <Flex justifyContent="space-between" alignItems="center">
       <Box>
@@ -20,11 +20,11 @@ export const Jumbotron = () => {
         <Flex pt={2}>
           <Button
             padding="8px 32px"
-            background={customTheme.colors.primary}
+            backgroundColor="primary"
             textTransform="uppercase"
             borderRadius={0}
             mr={3}
-            _hover={{ bg: customTheme.colors.secondary }}
+            _hover={{ backgroundColor: "secondary" }}
           >
             Join Us
           </Button>
@@ -32,10 +32,10 @@ export const Jumbotron = () => {
             padding="8px 32px"
             background={customTheme.colors.transparent}
             border="1px solid"
-            borderColor={customTheme.colors.primary}
+            borderColor="primary"
             borderRadius={0}
             textTransform="uppercase"
-            _hover={{ bg: customTheme.colors.secondary }}
+            _hover={{ backgroundColor: "secondary" }}
           >
             Github
           </Button>
