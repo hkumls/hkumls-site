@@ -1,14 +1,13 @@
 import React from "react";
-import { Flex, Link as ChakraLink, Text } from "@chakra-ui/core";
+import { Flex, Text } from "@chakra-ui/core";
 import styled from "styled-components";
 import { customTheme } from "../theme";
 import { Link as GatsbyLink } from "gatsby";
 import { globalHistory } from "@reach/router";
 
-const NavLink = styled(ChakraLink)<{ route: string }>`
-  padding-right: 8px;
+const Nav = styled(Text)<{ route: string }>`
   color: ${({ route }) =>
-    globalHistory.location.pathname.split("/", 2)[1] == route
+    globalHistory.location.hash == `#${route}`
       ? customTheme.colors.selectedNavColor
       : "white"};
 `;
@@ -22,20 +21,28 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
         <GatsbyLink to="">
           <Text>HKUMLS</Text>
         </GatsbyLink>
-        <div>
+        <Flex>
           <GatsbyLink to="#about">
-            <NavLink route="about">About</NavLink>
+            <Nav pr={2} route="about">
+              About
+            </Nav>
           </GatsbyLink>
           <GatsbyLink to="#events">
-            <NavLink route="events">Events</NavLink>
+            <Nav pr={2} route="events">
+              Events
+            </Nav>
           </GatsbyLink>
           <GatsbyLink to="#contact">
-            <NavLink route="contact">Contact</NavLink>
+            <Nav pr={2} route="contact">
+              Contact
+            </Nav>
           </GatsbyLink>
           <GatsbyLink to="/team">
-            <NavLink route="team">Team</NavLink>
+            <Nav pr={2} route="team">
+              Team
+            </Nav>
           </GatsbyLink>
-        </div>
+        </Flex>
       </Flex>
       <Flex flexDirection="column" p={8}>
         {children}
