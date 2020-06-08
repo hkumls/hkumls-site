@@ -1,5 +1,11 @@
 import React from "react";
+import { Layout } from "../components";
+import { Jumbotron } from "../components/home";
 
-const IndexPage = () => <div>Home</div>;
+const IndexPage = () => (
+  <Layout>
+    <Jumbotron />
+  </Layout>
+);
 
 export default IndexPage;
