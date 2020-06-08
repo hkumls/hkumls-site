@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{"i6+/":function(n,t,e){"use strict";e.r(t);var o=e("q1tI"),u=e.n(o);t.default=function(){return u.a.createElement("div",null,"404 not found")}}}]);
+//# sourceMappingURL=component---src-pages-404-tsx-0d4956b94b1a7ca84439.js.map
