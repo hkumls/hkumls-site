@@ -9,18 +9,6 @@ const StyledRobot = styled(RobotSVG)`
   width: 50%;
 `;
 
-const StyledButton = styled(Button)<{ onlyBorder?: boolean }>`
-  padding: 8px 32px;
-  background: ${props =>
-    !props.onlyBorder
-      ? customTheme.colors.primary
-      : customTheme.colors.transparent};
-  border: ${props => props.onlyBorder && "1px solid"};
-  border-color: ${props => props.onlyBorder && customTheme.colors.primary};
-  text-transform: uppercase;
-  border-radius: 0;
-`;
-
 export const Jumbotron = () => {
   return (
     <Flex justifyContent="space-between" alignItems="center">
@@ -30,15 +18,27 @@ export const Jumbotron = () => {
         </Text>
         <Text fontSize="lg">Analyse. Design. Build.</Text>
         <Flex pt={2}>
-          <StyledButton mr={3} _hover={{ bg: customTheme.colors.secondary }}>
-            Join Us
-          </StyledButton>
-          <StyledButton
+          <Button
+            padding="8px 32px"
+            background={customTheme.colors.primary}
+            textTransform="uppercase"
+            borderRadius={0}
+            mr={3}
             _hover={{ bg: customTheme.colors.secondary }}
-            onlyBorder
+          >
+            Join Us
+          </Button>
+          <Button
+            padding="8px 32px"
+            background={customTheme.colors.transparent}
+            border="1px solid"
+            borderColor={customTheme.colors.primary}
+            borderRadius={0}
+            textTransform="uppercase"
+            _hover={{ bg: customTheme.colors.secondary }}
           >
             Github
-          </StyledButton>
+          </Button>
         </Flex>
       </Box>
       <StyledRobot />
