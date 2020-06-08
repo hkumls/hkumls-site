@@ -3,11 +3,12 @@ import { Flex, Link as ChakraLink, Text } from "@chakra-ui/core";
 import styled from "styled-components";
 import { customTheme } from "../theme";
 import { Link as GatsbyLink } from "gatsby";
+import { globalHistory } from "@reach/router";
 
 const NavLink = styled(ChakraLink)<{ route: string }>`
   padding-right: 8px;
   color: ${({ route }) =>
-    window.location.pathname.split("/", 2)[1] == route
+    globalHistory.location.pathname.split("/", 2)[1] == route
       ? customTheme.colors.selectedNavColor
       : "white"};
 `;
