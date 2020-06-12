@@ -1,6 +1,6 @@
 import { theme } from "@chakra-ui/core";
 
-export const customTheme = {
+const customTheme = {
   ...theme,
   colors: {
     ...theme.colors,
@@ -9,3 +9,5 @@ export const customTheme = {
     selectedNavColor: theme.colors.purple[200],
   },
 };
+
+export default customTheme;

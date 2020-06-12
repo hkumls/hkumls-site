@@ -1,52 +1,60 @@
 import React from "react";
-import { Flex, Text } from "@chakra-ui/core";
-import styled from "styled-components";
-import { customTheme } from "../theme";
+import { Box, Flex, Text, Heading } from "@chakra-ui/core";
 import { Link as GatsbyLink } from "gatsby";
-import { globalHistory } from "@reach/router";
 
-const Nav = styled(Text)<{ route: string }>`
-  color: ${({ route }) =>
-    globalHistory.location.hash == `#${route}`
-      ? customTheme.colors.selectedNavColor
-      : "white"};
-`;
+export const NavItem = ({ text, id, locationHash }) => (
+  <GatsbyLink to={`#${id}`} key={id}>
+    <Text
+      color={locationHash === `#${id}` ? "selectedNavColor" : "white"}
+      pr={5}
+    >
+      {text}
+    </Text>
+  </GatsbyLink>
+);
 
-export const Layout: React.FC<{ children: React.ReactNode }> = ({
+export const Layout: React.FC<{ children: React.ReactNode; location: any }> = ({
   children,
+  location,
 }) => {
+  const routes = [
+    {
+      id: "about",
+      text: "About",
+    },
+    {
+      id: "events",
+      text: "Events",
+    },
+    {
+      id: "contact",
+      text: "Contact",
+    },
+    {
+      id: "team",
+      text: "Team",
+    },
+  ];
   return (
-    <div>
-      <Flex p={8} justifyContent="space-between">
-        <GatsbyLink to="">
-          <Text>HKUMLS</Text>
-        </GatsbyLink>
-        <Flex>
-          <GatsbyLink to="#about">
-            <Nav pr={2} route="about">
-              About
-            </Nav>
+    <>
+      <Flex as="nav" p={8} alignItems="center">
+        <Box flex="1 1 auto">
+          <GatsbyLink to="">
+            <Heading>HKUMLS</Heading>
           </GatsbyLink>
-          <GatsbyLink to="#events">
-            <Nav pr={2} route="events">
-              Events
-            </Nav>
-          </GatsbyLink>
-          <GatsbyLink to="#contact">
-            <Nav pr={2} route="contact">
-              Contact
-            </Nav>
-          </GatsbyLink>
-          <GatsbyLink to="/team">
-            <Nav pr={2} route="team">
-              Team
-            </Nav>
-          </GatsbyLink>
-        </Flex>
+        </Box>
+        {routes.map(route => (
+          <NavItem
+            id={route.id}
+            text={route.text}
+            locationHash={location.hash}
+            key={route.id}
+          ></NavItem>
+        ))}
       </Flex>
-      <Flex flexDirection="column" p={8}>
+      <Box as="main" flexDirection="column" p={8}>
         {children}
-      </Flex>
-    </div>
+      </Box>
+    </>
   );
 };
