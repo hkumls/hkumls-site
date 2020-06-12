@@ -1,18 +1,15 @@
 import React from "react";
-import { Flex, Box, Text, Button, useTheme } from "@chakra-ui/core";
+import { Flex, Box, Text, Button, Grid } from "@chakra-ui/core";
 import RobotSVG from "../../assets/robot.svg";
-import styled from "styled-components";
-
-const StyledRobot = styled(RobotSVG)`
-  height: 90%;
-  width: 50%;
-`;
 
 export const Jumbotron = () => {
-  const customTheme = useTheme();
   return (
-    <Flex justifyContent="space-between" alignItems="center">
-      <Box>
+    <Grid
+      alignItems={["", "", "center", "center", "center"]}
+      gridGap={[2, 4, 6, 8, 10]}
+      gridTemplateColumns={["1fr", "1fr", "1fr 1fr", "1fr 1fr", "1fr 1fr"]}
+    >
+      <Box order={[2, 2, 1, 1, 1]}>
         <Text fontSize="3xl" as="b">
           HKU Machine Learning Society
         </Text>
@@ -30,7 +27,7 @@ export const Jumbotron = () => {
           </Button>
           <Button
             padding="8px 32px"
-            background={customTheme.colors.transparent}
+            backgroundColor="transparent"
             border="1px solid"
             borderColor="primary"
             borderRadius={0}
@@ -41,7 +38,12 @@ export const Jumbotron = () => {
           </Button>
         </Flex>
       </Box>
-      <StyledRobot />
-    </Flex>
+      <Box
+        as={RobotSVG}
+        order={[1, 1, 2, 2, 2]}
+        w="100%"
+        h={["90vw", "90vw", "40vw", "40vw", "40vw"]}
+      />
+    </Grid>
   );
 };

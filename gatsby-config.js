@@ -7,7 +7,6 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-chakra-ui",
-    "gatsby-plugin-styled-components",
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
