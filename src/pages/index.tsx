@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout } from "../components";
-import { Jumbotron, About } from "../components/home";
+import { Jumbotron, About } from "../components";
 
 // Enable smooth-scroll behaviour
 if (typeof window !== "undefined") require("smooth-scroll")('a[href*="#"]');
