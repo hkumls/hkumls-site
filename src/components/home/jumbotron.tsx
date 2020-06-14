@@ -2,6 +2,8 @@ import React from "react";
 import { Flex, Box, Text, Button, Grid } from "@chakra-ui/core";
 import RobotSVG from "../../assets/robot.svg";
 
+const githubUrl = "https://github.com/hkumls";
+
 export const Jumbotron = () => {
   return (
     <Grid
@@ -33,6 +35,7 @@ export const Jumbotron = () => {
             borderRadius={0}
             textTransform="uppercase"
             _hover={{ backgroundColor: "secondary" }}
+            onClick={() => window.open(githubUrl, "_blank", "noopener")}
           >
             Github
           </Button>
