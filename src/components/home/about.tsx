@@ -8,8 +8,8 @@ export const About: FunctionComponent = () => {
   return (
     <Flex
       align="center"
-      mt={10}
-      p={10}
+      mt={[4, 8, 12, 16]}
+      p={[4, 6, 8, 10]}
       direction="column"
       textAlign="center"
       id="about"
@@ -17,7 +17,7 @@ export const About: FunctionComponent = () => {
       <Text fontSize="3xl" as="b" p={5}>
         About
       </Text>
-      <Text fontSize="xl"> {descriptionContent} </Text>
+      <Text fontSize={["l", "l", "xl", "xl"]}> {descriptionContent} </Text>
       <Button
         backgroundColor="primary"
         _hover={{ backgroundColor: "secondary" }}
