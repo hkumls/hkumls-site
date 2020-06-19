@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Flex, Text, Heading } from "@chakra-ui/core";
 import { Link as GatsbyLink } from "gatsby";
+import "./layout.css";
 
 export const NavItem = ({ text, id, locationHash }) => (
   <GatsbyLink to={`#${id}`} key={id}>

@@ -1,12 +1,11 @@
 import React from "react";
 import { Layout } from "../components";
 import { Jumbotron, About, Sponsors } from "../components";
-
-// Enable smooth-scroll behaviour
-if (typeof window !== "undefined") require("smooth-scroll")('a[href*="#"]');
+import SEO from "../components/seo";
 
 const IndexPage = ({ location }) => (
   <Layout location={location}>
+    <SEO title="Home" />
     <Jumbotron />
     <About />
     <Sponsors />
