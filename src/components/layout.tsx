@@ -28,12 +28,12 @@ export const Layout: React.FC<{ children: React.ReactNode; location: any }> = ({
       text: "Events",
     },
     {
-      id: "contact",
-      text: "Contact",
-    },
-    {
       id: "team",
       text: "Team",
+    },
+    {
+      id: "contact",
+      text: "Contact",
     },
   ];
   return (

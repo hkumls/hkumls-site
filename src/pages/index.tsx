@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout } from "../components";
-import { Jumbotron, About, Sponsors, Team } from "../components";
+import { Jumbotron, About, Sponsors, Contact, Team } from "../components";
 import SEO from "../components/seo";
 
 // Enable smooth-scroll behaviour
@@ -13,6 +13,7 @@ const IndexPage = ({ location }) => (
     <About />
     <Sponsors />
     <Team />
+    <Contact />
   </Layout>
 );
 
