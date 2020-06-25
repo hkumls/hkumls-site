@@ -1,5 +1,5 @@
-import placeholder from "../../assets/images/profilePlaceholder.png";
-import welvin from "../../assets/images/welvin.png";
+import placeholder from "../../assets/images/members/profilePlaceholder.png";
+import welvin from "../../assets/images/members/welvin.png";
 
 export const membersData = [
   {
