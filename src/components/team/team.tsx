@@ -9,9 +9,9 @@ export const Team: FunctionComponent = () => {
       <Text fontSize="3xl" as="b" p={5}>
         Team
       </Text>
-      <Flex>
+      <Flex flexWrap="wrap" justify="center">
         {membersData.map((memberData, index) => (
-          <Member key={index} data={memberData} />
+          <Member key={index} memberData={memberData} />
         ))}
       </Flex>
     </Flex>
