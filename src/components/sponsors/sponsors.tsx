@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { Flex, Text, Grid } from "@chakra-ui/core";
 import { Sponsor } from "./sponsor";
-import iDendronLogo from "../../assets/sponsors/iDendronLogo.svg";
+import iDendronLogo from "../../assets/SVGs/sponsors/iDendronLogo.svg";
 
 const sponsors = [
   {

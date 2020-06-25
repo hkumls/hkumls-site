@@ -1,6 +1,6 @@
 import React from "react";
 import { Flex, Box, Text, Button, Grid } from "@chakra-ui/core";
-import RobotSVG from "../../assets/robot.svg";
+import RobotSVG from "../../assets/SVGs/robot.svg";
 
 const githubUrl = "https://github.com/hkumls";
 
