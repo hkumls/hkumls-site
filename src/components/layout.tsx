@@ -1,59 +1,23 @@
 import React from "react";
-import { Box, Flex, Text, Heading } from "@chakra-ui/core";
-import { Link as GatsbyLink } from "gatsby";
+import { Box } from "@chakra-ui/core";
 import "./layout.css";
-
-export const NavItem = ({ text, id, locationHash }) => (
-  <GatsbyLink to={`#${id}`} key={id}>
-    <Text
-      color={locationHash === `#${id}` ? "selectedNavColor" : "white"}
-      pr={5}
-    >
-      {text}
-    </Text>
-  </GatsbyLink>
-);
+import { Header } from "./header";
 
 export const Layout: React.FC<{ children: React.ReactNode; location: any }> = ({
   children,
-  location,
 }) => {
-  const routes = [
-    {
-      id: "about",
-      text: "About",
-    },
-    {
-      id: "events",
-      text: "Events",
-    },
-    {
-      id: "team",
-      text: "Team",
-    },
-    {
-      id: "contact",
-      text: "Contact",
-    },
-  ];
   return (
     <>
-      <Flex as="nav" p={8} alignItems="center">
-        <Box flex="1 1 auto">
-          <GatsbyLink to="">
-            <Heading>HKUMLS</Heading>
-          </GatsbyLink>
-        </Box>
-        {routes.map(route => (
-          <NavItem
-            id={route.id}
-            text={route.text}
-            locationHash={location.hash}
-            key={route.id}
-          ></NavItem>
-        ))}
-      </Flex>
-      <Box as="main" flexDirection="column" p={8}>
+      <Box
+        position="fixed"
+        left={0}
+        right={0}
+        zIndex={10}
+        backgroundColor="rgba(0,0,0,0.5)"
+      >
+        <Header location={location} />
+      </Box>
+      <Box as="main" flexDirection="column" p={[6, 8]}>
         {children}
       </Box>
     </>

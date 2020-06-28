@@ -10,6 +10,7 @@ export const Jumbotron = () => {
       alignItems={["", "", "center", "center", "center"]}
       gridGap={[2, 4, 6, 8, 10]}
       gridTemplateColumns={["1fr", "1fr", "1fr 1fr", "1fr 1fr", "1fr 1fr"]}
+      marginTop={[16, 24, 32]}
     >
       <Box order={[2, 2, 1, 1, 1]}>
         <Text fontSize="3xl" as="b">
