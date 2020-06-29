@@ -1,15 +1,8 @@
 import React, { FunctionComponent } from "react";
 import { Flex, Text, Grid } from "@chakra-ui/core";
 import { Sponsor } from "./sponsor";
-import iDendronLogo from "../../assets/SVGs/sponsors/iDendronLogo.svg";
 
-const sponsors = [
-  {
-    name: "iDendron",
-    logo: iDendronLogo,
-    url: "https://idendron.hku.hk/",
-  },
-];
+import { listOfSponsors } from "./listOfSponsors.ts";
 
 export const Sponsors: FunctionComponent = () => {
   return (
@@ -18,8 +11,8 @@ export const Sponsors: FunctionComponent = () => {
         Supported by
       </Text>
       <Flex maxW="100vw" wrap="wrap" align="center" justify="center">
-        {sponsors.map((sponsor, index) => (
-          <Sponsor key={index} sponsor={sponsor} />
+        {listOfSponsors.map((sponsorDetails, index) => (
+          <Sponsor key={index} sponsorDetails={sponsorDetails} />
         ))}
       </Flex>
     </Flex>
