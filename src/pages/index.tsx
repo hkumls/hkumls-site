@@ -20,7 +20,6 @@ const IndexPage = ({ location }) => (
       <Jumbotron />
       <About />
       <Sponsors />
-      <Team />
       <Contact />
     </Layout>
     <Footer />
