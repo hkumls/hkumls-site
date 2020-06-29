@@ -1,16 +1,20 @@
 import React, { FunctionComponent } from "react";
-import { Box, Link } from "@chakra-ui/core";
+import { Image, Link } from "@chakra-ui/core";
 
-interface SponsorComponentProps {
+interface SponsorDetails {
   name: string;
   logo: string;
   url?: string;
 }
 
+interface SponsorComponentProps {
+  sponsorDetails: SponsorDetails;
+}
+
 export const Sponsor: FunctionComponent<SponsorComponentProps> = ({
-  sponsor: { name, logo, url },
+  sponsorDetails: { name, logo, url },
 }) => (
-  <Link href={url} isExternal>
-    <Box as={logo} maxW="sm" maxH="sm" h={12} m={5} />
+  <Link href={url} isExternal size={"min(300px, 80%)"} m={[2, 2, 5, 5]}>
+    <Image src={logo} alt={name} />
   </Link>
 );
