@@ -14,7 +14,7 @@ interface SponsorComponentProps {
 export const Sponsor: FunctionComponent<SponsorComponentProps> = ({
   sponsorDetails: { name, logo, url },
 }) => (
-  <Link href={url} isExternal size={"min(300px, 80%)"}>
+  <Link href={url} isExternal size={"min(300px, 80%)"} m={[2, 2, 5, 5]}>
     <Image src={logo} alt={name} />
   </Link>
 );
