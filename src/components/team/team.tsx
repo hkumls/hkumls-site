@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { Flex, Text } from "@chakra-ui/core";
+import { Flex, Text, Grid } from "@chakra-ui/core";
 import { Member } from "./member";
 import { membersData } from "./membersData";
 
@@ -15,11 +15,12 @@ export const Team: FunctionComponent = () => {
         {" "}
         {teamIntro}{" "}
       </Text>
-      <Flex flexWrap="wrap" justify="center">
+
+      <Grid templateColumns="repeat(auto-fit, minmax(300px, 1fr))" width="100%">
         {membersData.map((memberData, index) => (
           <Member key={index} memberData={memberData} />
         ))}
-      </Flex>
+      </Grid>
     </Flex>
   );
 };
