@@ -28,8 +28,9 @@ export const MobileMenu: React.FC<Props> = ({
             <NavItem
               id={route.id}
               text={route.text}
-              locationHash={location.hash}
+              location={location.href}
               key={route.id}
+              isSection={route.section}
             ></NavItem>
           ))}
         </DrawerBody>
