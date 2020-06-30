@@ -31,18 +31,6 @@ export const About: FunctionComponent = () => {
         >
           Join Us
         </Button>
-        <GatsbyLink to="/team">
-          <Button
-            padding="8px 32px"
-            backgroundColor="primary"
-            textTransform="uppercase"
-            borderRadius={0}
-            mr={3}
-            _hover={{ backgroundColor: "secondary" }}
-          >
-            The Team
-          </Button>
-        </GatsbyLink>
       </Flex>
     </Flex>
   );
