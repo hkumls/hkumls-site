@@ -1,16 +1,5 @@
 import React from "react";
-import {
-  Flex,
-  Heading,
-  Text,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  Button,
-  Box,
-  useDisclosure,
-} from "@chakra-ui/core";
+import { Flex, Heading, Text, Box, useDisclosure } from "@chakra-ui/core";
 import { Link as GatsbyLink } from "gatsby";
 import { FiMenu } from "react-icons/fi";
 
@@ -58,7 +47,7 @@ export const Header: React.FC<{ location: any }> = ({ location }) => {
         display={["flex", "none"]}
         onClick={disclosure.onOpen}
       />
-      <MobileMenu disclosure={disclosure} />
+      <MobileMenu disclosure={disclosure} location={location} />
     </Flex>
   );
 };

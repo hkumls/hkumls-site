@@ -12,10 +12,12 @@ import { NavItem } from "./header";
 
 interface Props {
   disclosure: UseDisclosureReturn;
+  location: any;
 }
 
 export const MobileMenu: React.FC<Props> = ({
   disclosure: { onClose, isOpen },
+  location,
 }) => {
   return (
     <Drawer isOpen={isOpen} placement="top" onClose={onClose}>

@@ -5,6 +5,7 @@ import { Header } from "./header";
 
 export const Layout: React.FC<{ children: React.ReactNode; location: any }> = ({
   children,
+  location,
 }) => {
   return (
     <>
