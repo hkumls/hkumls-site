@@ -11,7 +11,6 @@ const TeamPage = ({ location }) => (
     <Layout location={location}>
       <SEO title="Team" />
       <Team />
-      <Contact />
     </Layout>
     <Footer />
   </>
