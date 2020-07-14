@@ -39,7 +39,14 @@ export const Member: FunctionComponent<MemberComponentProps> = ({
   const { name, picture } = memberData;
 
   return (
-    <Flex m={5} direction="column" align="center">
+    <Flex
+      m={5}
+      direction="column"
+      align="center"
+      flexGrow={1}
+      flexShrink={0}
+      flexBasis="21%"
+    >
       <Image my={1} src={picture} alt={name} rounded="full" size={200} />
       <Heading my={1} as="h6" size="sm">
         {name}

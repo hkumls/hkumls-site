@@ -6,12 +6,9 @@ import { FiMenu } from "react-icons/fi";
 import { routes } from "./routes";
 import { MobileMenu } from "./mobileMenu";
 
-export const NavItem = ({ text, id, locationHash }) => (
-  <GatsbyLink to={`#${id}`} key={id}>
-    <Text
-      color={locationHash === `#${id}` ? "selectedNavColor" : "white"}
-      pr={5}
-    >
+export const NavItem = ({ text, id, location, isSection }) => (
+  <GatsbyLink to={isSection ? `/#${id}` : `/${id}`} key={id}>
+    <Text color={location.endsWith(id) ? "selectedNavColor" : "white"} pr={5}>
       {text}
     </Text>
   </GatsbyLink>
@@ -27,7 +24,7 @@ export const Header: React.FC<{ location: any }> = ({ location }) => {
       justifyContent="space-between"
       alignItems="center"
     >
-      <GatsbyLink to="">
+      <GatsbyLink to="/">
         <Heading>HKUMLS</Heading>
       </GatsbyLink>
       <Flex display={["none", "flex"]}>
@@ -35,8 +32,9 @@ export const Header: React.FC<{ location: any }> = ({ location }) => {
           <NavItem
             id={route.id}
             text={route.text}
-            locationHash={location.hash}
+            location={location.href}
             key={route.id}
+            isSection={route.section}
           ></NavItem>
         ))}
       </Flex>
