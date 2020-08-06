@@ -5,11 +5,6 @@ export const routes = [
     section: true,
   },
   {
-    id: "events",
-    text: "Events",
-    section: true,
-  },
-  {
     id: "team",
     text: "Team",
     section: false,
