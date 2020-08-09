@@ -69,6 +69,6 @@ export const membersData = [
     name: "Eehit Ray",
     picture: eehit,
     linkedin: "https://www.linkedin.com/in/eehit-ray-52559b195/",
-    github: "https://github.com/greatblitz982",
+    github: "https://github.com/eehitray",
   },
 ];
